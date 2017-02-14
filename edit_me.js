@@ -26,3 +26,8 @@ function divide(a, b) {
 function power(a, b) {
 	return Math.pow(a, b);
 }
+
+// round to 2 digits
+function round(num) {
+	return Math.round(num * 100) / 100;
+}
