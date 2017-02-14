@@ -43,17 +43,24 @@ Object.getOwnPropertyNames(OPERATIONS)
 
 // this is where we solve the equation
 function solve() {
-	// NOTE: adding a + in front of a variable will convert it to a number
-	// NOTE: if it is not a number it will return NaN (not a number)
-	var value1 = +operand1.value;
-	var value2 = +operand2.value;
+	// get the function for parsing numbers
+	var parser = parseFloat;
+
+	// if there is a parseNumber function use that instead
+	if(typeof parseNumber == "function") {
+		parser = parseNumber;
+	}
+
+	// parse the values
+	var value1 = parser(operand1.value.trim());
+	var value2 = parser(operand2.value.trim());
 
 	// calculate the result
 	var $result = window[operator.value](value1, value2);
 
 	// check if the result is NaN
 	if(isNaN($result)) {
-		result.innerText = "Error";
+		result.innerText = "";
 	}
 	else {
 		// any special rounding

@@ -10,24 +10,3 @@ function add(a, b) {
 
 // Write subtract, multipy, divide, and power (exponent) functions.
 // When you write them they will be added to the calculator.
-
-function subtract(a, b) {
-	return a - b;
-}
-
-function multiply(a, b) {
-	return a * b;
-}
-
-function divide(a, b) {
-	return a / b;
-}
-
-function power(a, b) {
-	return Math.pow(a, b);
-}
-
-// round to 2 digits
-function round(num) {
-	return Math.round(num * 100) / 100;
-}
